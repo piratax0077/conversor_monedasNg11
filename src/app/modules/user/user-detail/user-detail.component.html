@@ -1,0 +1,24 @@
+<h1 class="text-success">{{title}}</h1>
+
+<div class="row" style="width: 100%;">
+    
+    <div class="col-12 " *ngIf="currentUser; else loaderComponent">
+        <div class="row">
+            <div class="col-12 col-md-6" >
+                <img src="{{currentUser.avatar}}" alt="" class="dsc-user-img">
+            </div>
+            <div class="col-12 col-md-6" >
+                <h2 class="text-primary border-bottom pb-3">Detalle de {{currentUser.name}}</h2>
+                <h3>Edad: {{currentUser.age}}</h3>
+                <p>{{currentUser.description}}</p>
+            </div>
+        </div>
+    </div>
+    <ng-template #loaderComponent>
+        <div class="row text-center">
+            <div class="col-12 ">
+                <img src="https://img.pikbest.com/58pic/35/39/61/62K58PICb88i68HEwVnm5_PIC2018.gif!w340" alt="" srcset="">
+            </div>
+        </div>
+    </ng-template>
+</div>

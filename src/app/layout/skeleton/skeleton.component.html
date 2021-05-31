@@ -1,0 +1,10 @@
+<app-navigation></app-navigation>
+<div class="container-flui dsc-skeleton-content">
+    <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>
+<ng-container *ngIf='isLoading'>
+    <div class="dsc-loader">
+        <img [src]="loader" alt="">
+    </div>
+</ng-container>

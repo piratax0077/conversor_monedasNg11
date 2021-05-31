@@ -1,0 +1,30 @@
+<div class="row" style="width: 100%;">
+    <div class="col-12">
+        <h2 class="text-primary border-bottom pb-1">Directiva [ngClass] - Designicode</h2>
+    </div>
+    <div class="col-12">
+        <div class="d-flex flex-wrap justify-content-center justify-content-md-start">
+            <ng-container *ngFor="let card of cards; index as i">
+            <div class="dsc-card" [ngClass]="{
+                'dsc-card': true,
+                'dsc-card-primary': card.isPrimary,
+                'dsc-card-secondary': !card.isPrimary,
+                'dsc-card-disabled' : card.isDisabled
+            }">
+                <div class="dsc-card__title">
+                    <h2>{{card.title}}</h2>
+                </div>
+                <div class="dsc-card__body">
+
+                    {{card.body || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum pariatur unde repudiandae sed quod enim delectus animi sapiente fugit quas aliquam nisi, recusandae explicabo! Natus cumque dolor ea numquam aliquid.'}}
+                </div>
+                <div class="dsc-card__actions">
+                    <button class="btn btn-primary mr-1" (click)="changeStatus(card)">Cambiar color </button>
+                    <button class="btn btn-dark mr-1" (click)="disabledCard(card)">{{card.isDisabled ? 'Habilitar' : 'Deshabilitar'}}</button>
+                </div>
+            </div>
+
+        </ng-container>
+        </div>
+    </div>
+</div>

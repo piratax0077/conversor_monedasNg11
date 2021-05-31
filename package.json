@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start:dev": "ng serve --c=dev",
+    "start:prod": "ng serve --c=prod",
+    "build:dev": "ng build --c=dev",
+    "build:prod": "ng build --c=prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "backend": "json-server --watch ./src/app/data/backend/data.json"
   },
   "private": true,
   "dependencies": {
@@ -25,7 +28,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.3",
-    "@angular/cli": "~11.2.3",
+    "@angular/cli": "^11.2.10",
     "@angular/compiler-cli": "~11.2.4",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
